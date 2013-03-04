@@ -265,7 +265,7 @@ def main():
         elif opt in ("-d", "--dir"):
             global nfiles
             global nfilesdir
-            nfilesdir = arg + "\\"
+            nfilesdir = arg
             nfiles = readfilesindir(arg)
             found_d = True
         elif opt in ("-o", "--outfile"):
