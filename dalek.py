@@ -264,6 +264,8 @@ def main():
             found_i = True
         elif opt in ("-d", "--dir"):
             global nfiles
+            global nfilesdir
+            nfilesdir = arg + "\\"
             nfiles = readfilesindir(arg)
             found_d = True
         elif opt in ("-o", "--outfile"):
@@ -280,7 +282,7 @@ def main():
             assert False, "unhandled option"
     if found_d and not None:
         for nfile in nfiles:
-            parsenessus(nfile)
+            parsenessus(nfilesdir + nfile)
     elif found_i and not None:
         parsenessus(infile)
     # Bootstrap - Sort Results/Create XLS/Drop Collection
