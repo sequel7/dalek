@@ -51,7 +51,7 @@ def parsenessus(infile):
             for f in e.getchildren():
                 # Get IP address
                 if f.tag == "ReportHost":
-                    host = f.get("name")
+                    host = f.find("HostProperties/tag[@name='host-ip']").text
                     nessus_dict["host"] = dottedQuadToNum(host)
                     for g in f.getchildren():
                         #Get OS and FQDN
